@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MY PORTFOLIO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <img src="photo.jpg" alt="Profile Photo">
+        <h1>Mareaun Jewel N. Mercader</h1>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#hobbies"><i class="fas fa-heart"></i> Hobbies</a></li>
+                <li><a href="#photo"><i class="fas fa-camera"></i> Photo</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Thank you for visiting my website. Here you can find information about me, my skills, and my work. Feel free to explore and get in touch if you'd like to collaborate!</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <ul>
+                <li>
+                    <p>My name is Mareaun Jewel N. Mercader, 21 years old, from Brgy.Aguit-itan Purok-2 Calbayog City. I'm currently in my second year of college, pursuing a Bachelor of Science in Information Technology.</p>
+                </li>
+                <li>
+                    <p>My mission as a student is to pursue my studies to achieve my dreams and make my parents proud through my actions and achievements.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>Elementary:</strong> Calbayog Pilot Elementary School<br>
+                    Graduated: 2014-2015
+                </li>
+                <li>
+                    <strong>Secondary:</strong> Calbayog City National High School<br>
+                    Graduated: 2018-2019
+                </li>
+                <li>
+                    <strong>Senior High:</strong> Calbayog City National High School<br>
+                    Graduated: 2020-2021
+                </li>
+                <li>
+                    <strong>Current:</strong> Northwest Samar State University<br>
+                    Year: Second year college
+                </li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <canvas id="skillsChart" width="400" height="200"></canvas>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies outside of work:</h2>
+            <ul>
+                <li><p>Watching K-drama</p></li>
+                <li><p>Reading Wattpad</p></li>
+                <li><p>Listening Korean Song</p></li>
+                <li><p>Buying PhotoCards</p></li>
+        </section>
+
+        <section id="photo">
+            <h2>Photo</h2>
+            <img src="123.jpg" alt="Photo 1" width="320">
+            <img src="image.jpg" alt="Photo 2" width="320">
+            <img src="pic.jpg" alt="Photo 3" width="320">
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me via:</p>
+            <ul>
+                <li>Phone: <a href="tel:09923764780">09923764780</a></li>
+                <li>Email: <a href="mailto:mareaunjewel@gmail.com">mareaunjewel@gmail.com</a></li>
+            </ul>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>My other account:</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/Mareauun Jewel Nepomuceno Mercader" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@itsmemaryoonn" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/maryonjwl" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+     <script src="script.js"></script>
+ </body>
+ </html>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var ctx = document.getElementById('skillsChart').getContext('2d');
+        var skillsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['HTML', 'CSS', 'JavaScript', 'Python', 'Java'],
+                datasets: [{
+                    label: 'Skill Level',
+                    data: [50, 60, 40, 70, 40], // Example skill levels
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
+ 
